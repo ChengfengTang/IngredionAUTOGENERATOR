@@ -39,7 +39,7 @@ def generate():
             '<PRODUCT_CODE>': ', '.join(set(group['Product code'].astype(str))),
             '<DAMAGE>': damages_reasons,
             '<BATCH_NUMBER>': ', '.join(group['Batch Number'].astype(str)),
-            '<REASON>': ', '.join(group['Reason'].astype(str)),
+            '<REASON>': ', '.join(set(group['Reason'].astype(str))),
         }
 
         # Replace the placeholders in the document
