@@ -35,8 +35,8 @@ def generate():
         replacements = {
             '<DATE>': today,
             '<PO>': str(int(po)),  # convert 'PO' to int before converting to string to remove decimal point
-            '<INVOICE_NO>': ', '.join(group['Invoice NO'].astype(str)),
-            '<PRODUCT_CODE>': ', '.join(group['Product code'].astype(str)),
+            '<INVOICE_NO>': ', '.join(set(group['Invoice NO'].astype(str))),
+            '<PRODUCT_CODE>': ', '.join(set(group['Product code'].astype(str))),
             '<DAMAGE>': damages_reasons,
             '<BATCH_NUMBER>': ', '.join(group['Batch Number'].astype(str)),
             '<REASON>': ', '.join(group['Reason'].astype(str)),
